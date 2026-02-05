@@ -1,6 +1,6 @@
-# Moccasin Project
+# Moccasin NFT Project
 
-🐍 Welcome to your Moccasin project!
+🐍 Exploring how to build NFTs using Moccasin
 
 ## Quickstart
 
@@ -15,5 +15,9 @@ mox run deploy
 ```
 mox test
 ```
+
+## Game Plan
+- [ ] Create a basic NFT contract
+- [ ] Create a mood NFT contract that changes the image based on mood
 
 _For documentation, please run `mox --help` or visit [the Moccasin documentation](https://cyfrin.github.io/moccasin)_
