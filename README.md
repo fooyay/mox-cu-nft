@@ -17,7 +17,9 @@ mox test
 ```
 
 ## Game Plan
-- [ ] Create a basic NFT contract
+- [x] Create a basic NFT contract
+- [x] Workshop: change NFT image to my own art (a monkey)
+- [x] Workshop: add tests for basic_nft contract
 - [ ] Create a mood NFT contract that changes the image based on mood
 
 _For documentation, please run `mox --help` or visit [the Moccasin documentation](https://cyfrin.github.io/moccasin)_

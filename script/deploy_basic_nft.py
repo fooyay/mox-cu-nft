@@ -15,6 +15,7 @@ def deploy_basic_nft():
     token_uri = contract.tokenURI(0)
     print(f"Basic NFT deployed to {contract.address}")
     print(f"Token URI: {token_uri}")
+    return contract
 
 
 def moccasin_main():

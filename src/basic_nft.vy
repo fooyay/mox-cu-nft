@@ -30,3 +30,8 @@ def mint(uri: String[432]):
     erc721._counter = token_id + 1
     erc721._safe_mint(msg.sender, token_id, b"")
     erc721._set_token_uri(token_id, uri)
+
+@external
+def number_of_tokens() -> uint256:
+    return erc721._counter
+    
