@@ -1,7 +1,7 @@
 [project]
 name = "mox-cu-nft"
 version = "0.1.0"
-description = "Add your description here"
+description = "Exploring how to build NFTs using Moccasin"
 readme = "README.md"
 requires-python = ">=3.12"
 dependencies = []

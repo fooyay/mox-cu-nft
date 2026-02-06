@@ -14,6 +14,16 @@ save_to_db = false
 default_account_name = "anvil0"
 chain_id = 31337
 
+# Note: Moccasin currently does not support call functions on ZKSync networks.
+# There's an error about an unexpected keyword argument 'simulate'.
+[networks.anvil-zksync]
+url = "http://127.0.0.1:8011"
+prompt_live = false
+save_to_db = false
+default_account_name = "anvil0"
+chain_id = 260
+is_zksync = true
+
 [networks.sepolia]
 url = "https://ethereum-sepolia-rpc.publicnode.com"
 chain_id = 11155111
