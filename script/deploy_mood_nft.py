@@ -14,8 +14,14 @@ def deploy_mood_nft():
         sad_svg = f.read()
         sad_svg_uri = svg_to_base64_uri(sad_svg)
         print(f"Sad SVG URI: {sad_svg_uri}")
-    contract = mood_nft.deploy(happy_svg_uri, sad_svg_uri)
-    return contract
+    mood_contract = mood_nft.deploy(happy_svg_uri, sad_svg_uri)
+    mood_contract.mint_nft()
+    print(f"NFT deployed to: {mood_contract.address}")
+    print(f"Current token URI: {mood_contract.tokenURI(0)}")
+    mood_contract.flip_mood(0)
+    print(f"New token URI after flipping mood: {mood_contract.tokenURI(0)}")
+
+    return mood_contract
 
 
 def svg_to_base64_uri(svg):
