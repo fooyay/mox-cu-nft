@@ -84,6 +84,10 @@ def flip_mood(token_id: uint256):
     else:
         self.token_id_to_mood[token_id] = Mood.HAPPY
     
+@external
+@view
+def number_of_tokens() -> uint256:
+    return erc721._counter
 
 @external
 @view
@@ -114,20 +118,20 @@ def tokenURI(token_id: uint256) -> String[FINAL_STRING_SIZE]:
         counter += 4
     return result
 
-@external
-@pure
-def svg_to_uri(svg: String[1024]) -> String[FINAL_STRING_SIZE]:
-    svg_bytes: Bytes[1024] = convert(svg, Bytes[1024])
-    encoded_chunks: DynArray[
-        String[4], base64._DATA_OUTPUT_BOUND
-    ] = base64._encode(svg_bytes, True)
-    result: String[FINAL_STRING_SIZE] = JSON_BASE_URI
+# @external
+# @pure
+# def svg_to_uri(svg: String[1024]) -> String[FINAL_STRING_SIZE]:
+#     svg_bytes: Bytes[1024] = convert(svg, Bytes[1024])
+#     encoded_chunks: DynArray[
+#         String[4], base64._DATA_OUTPUT_BOUND
+#     ] = base64._encode(svg_bytes, True)
+#     result: String[FINAL_STRING_SIZE] = JSON_BASE_URI
 
-    counter: uint256 = IMG_BASE_URI_SIZE
-    for encoded_chunk: String[4] in encoded_chunks:
-        result = self.set_indice_truncated(result, counter, encoded_chunk)
-        counter += 4
-    return result
+#     counter: uint256 = IMG_BASE_URI_SIZE
+#     for encoded_chunk: String[4] in encoded_chunks:
+#         result = self.set_indice_truncated(result, counter, encoded_chunk)
+#         counter += 4
+#     return result
 
 @internal
 @pure

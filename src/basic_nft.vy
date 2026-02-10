@@ -32,6 +32,7 @@ def mint(uri: String[432]):
     erc721._set_token_uri(token_id, uri)
 
 @external
+@view
 def number_of_tokens() -> uint256:
     return erc721._counter
     
